@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris - Player & AI Mode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="side-panel left-panel">
+            <div class="next-piece-container">
+                <h3>NEXT</h3>
+                <canvas id="next-canvas" width="120" height="120"></canvas>
+            </div>
+            <div class="hold-piece-container">
+                <h3>HOLD</h3>
+                <canvas id="hold-canvas" width="120" height="120"></canvas>
+            </div>
+        </div>
+        
+        <div class="main-board">
+            <canvas id="game-canvas" width="300" height="600"></canvas>
+            <div class="game-overlay" id="game-overlay">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">TETRIS</h2>
+                    <p id="overlay-message">Press START to play</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="side-panel right-panel">
+            <div class="score-container">
+                <h3>SCORE</h3>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="level-container">
+                <h3>LEVEL</h3>
+                <div class="level-value" id="level">1</div>
+            </div>
+            <div class="lines-container">
+                <h3>LINES</h3>
+                <div class="lines-value" id="lines">0</div>
+            </div>
+            
+            <div class="mode-container">
+                <h3>MODE</h3>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" id="player-btn">PLAYER</button>
+                    <button class="mode-btn" id="ai-btn">AI</button>
+                </div>
+            </div>
+            
+            <div class="controls-container">
+                <button class="control-btn start-btn" id="start-btn">START</button>
+                <button class="control-btn pause-btn" id="pause-btn" disabled>PAUSE</button>
+            </div>
+            
+            <div class="ai-speed-container" id="ai-speed-container">
+                <h3>AI SPEED</h3>
+                <input type="range" id="ai-speed" min="50" max="500" value="200">
+                <span id="ai-speed-value">200ms</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <h3>Controls (Player Mode)</h3>
+        <p>← → : Move | ↑ : Rotate | ↓ : Soft Drop | Space : Hard Drop | C : Hold</p>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
